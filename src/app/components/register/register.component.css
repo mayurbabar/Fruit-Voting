@@ -1,0 +1,33 @@
+  .wrapper {
+    padding-top: 10px;
+  }
+  
+  .input {
+    width: 350px;
+  }
+
+  .custom {
+    height: 370px;
+    width: 675px;
+    margin-left: 250px;
+  }
+
+  .label {
+    width: 200px;
+  }
+  
+  .padding {
+    padding-top: 10px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+
+  .button-register {
+    padding-left: 70px;
+  }
+  
+  .label-width {
+    width: 168px;
+  }

@@ -1,0 +1,13 @@
+#modest,
+#modest .panel-body,
+.panel-modest,
+.panel-modest .panel-body {
+  display: inline-block;
+}
+.border {
+  border-style: solid;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}

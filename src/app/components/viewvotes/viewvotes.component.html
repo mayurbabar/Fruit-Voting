@@ -1,0 +1,30 @@
+<!-- <p> viewVotes Works</p> -->
+
+<Div class="left">
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width:80px; padding-left:30px; background-color: #D3D3D3">Fruit Name</th>
+        <th style="width:10px; background-color: #D3D3D3">Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fruit of fruits">
+        <td style="width:80px; padding-left:30px">{{fruit.fruit}}</td>
+        <td style="padding-left:17px">{{fruit.fruit_count}}</td>
+      </tr>    
+    </tbody>   
+  </table>
+</Div>
+
+<div style="display: block" class="right">
+    <canvas width="500" height="400" baseChart
+      [data]="fruitCount"
+      [labels]="fruitName"
+      [chartType]="doughnutChartType"
+      [colors]="doughnutChartColors"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)">
+    </canvas>
+</div>
+

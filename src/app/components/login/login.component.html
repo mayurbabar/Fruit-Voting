@@ -1,0 +1,43 @@
+<div class="body">
+<div class="wrapper">
+<div class="panel panel-default custom">
+  <div class="panel-heading center"><font face="Belleza" size="5">Login to cast your vote</font></div>
+  <div class="panel-body">
+    <form class="form-horizontal" #f="ngForm" novalidate (ngSubmit)="f.form.valid && loginRequest()">
+      <div class="form-group">
+        <label for="email" class="col-sm-2 control-label label-width"><font face="Belleza" size="3.5" color="#566573">Email Address : </font></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control input" required #email1="ngModel" 
+          pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="email" name="email">
+          <small [hidden]="email1.valid || (email1.pristine && !f.submitted)" class="text-danger">
+            Email is required and format should be <i>john@gmail.com</i>.
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="col-sm-2 control-label label-width"><font face="Belleza" size="3.5" color="#566573">Password : </font></label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control input" required minlength="3" #password1="ngModel" [(ngModel)]="password" name="password">
+          <small [hidden]="password1.valid || (password1.pristine && !f.submitted)" class="text-danger">
+              Password is required (minimum 3 characters)
+          </small>
+          <div>
+              <label for="warning" class="text-danger padding">{{warning}} </label>
+          </div>
+        </div>      
+        
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8 button-login">
+          <button type="submit" class="btn btn-success" [disabled]="!f.valid">Login</button>
+          <a  class="btn btn-info button-register" (click)="register()">Register</a>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+<div class="push"></div>
+</div>
+</div>

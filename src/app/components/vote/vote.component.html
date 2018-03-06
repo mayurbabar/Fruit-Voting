@@ -1,0 +1,63 @@
+<div>
+  <h3 style="padding-left:405px"><font face="Trebuchet MS" size="6" color="#5D6D7E" style="font-style:italic;"> Welcome {{userName}} </font></h3>
+  <br/>
+</div>
+<div style="padding-top:10px;">
+  <div class="col-sm-4">
+    <div class="panel-heading"><span style="padding-left: 50px;"><font face="Belleza" size="4" color="#566573"><b> Please select your favorite fruit </b></font></span></div>
+    <div class="panel-body panel-height">
+      
+        <table style="margin: auto; padding-top:30px">
+          <tbody >
+            <tr *ngFor="let entry of fruits; let idx = index">
+              <td height="30" style="width:30px; padding-left:30px;"><input type="radio" name="radiogroup" [(ngModel)]="selectedFruit" [checked]="(idx === 0)"  [value]="entry.fruit_id"></td>
+              <td height="30" style="width:130px; padding-left:30px;">{{ entry.fruit_name }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br/>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-8" style="padding-left:30px;">
+            <button type="submit" (click)="vote()" class="btn btn-success" >Vote</button>
+          </div>
+        </div>
+    </div>
+    
+  </div>
+
+  <div class="col-sm-4">
+    <div class="panel-heading" style="padding-left: 30px;"><font face="Belleza" size="4" color="#566573"><b> Didn't Find Your Favorite Fruit? <br/>No Problem. Add Here </b></font></div>
+    <div class="panel-body panel-height">
+      <div class="col-sm-9">
+        <h5><font face="Belleza" size="3.5" color="#566573">Fruit Name: </font></h5>
+        <input type="text" class="form-control"  [(ngModel)]="newFruit" name="newFruit">
+        <br/>
+        <button class="btn btn-info" (click)="addFruit()"> Add Fruit</button>
+      </div><br/>
+    </div>    
+  </div>
+
+
+  <div class="col-sm-4">
+    <div class="panel-heading"><span style="padding-left: 60px;"><font face="Belleza" size="4" color="#566573"><b> Voting History </b></font></span></div>
+    <div class="panel-body panel-height">
+      <div class="col-sm-9">
+        <table class="table" style="margin:auto;">
+          <thead>
+            <th style="padding-left:30px; background-color: #D3D3D3; width:130px"> Fruit </th>
+            <th style="padding-right:35px; background-color: #D3D3D3; width:60px"> Count </th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let userfruit of userVotes">
+              <td style="padding-left:30px;">{{userfruit.fruit}}</td>
+              <td style="padding-left:13px; padding-right:35px">{{userfruit.fruit_count}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>    
+  </div>
+</div>
+
+
+  

@@ -1,0 +1,29 @@
+#modest,
+#modest .panel-body,
+.panel-modest,
+.panel-modest .panel-body {
+  display: inline-block;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  border-bottom: 1px solid #000000;
+}
+
+.left {
+  padding-left: 100px; 
+  padding-top: 60px;
+  width:400px; 
+  height:450px; 
+  float: left;
+}
+
+.right{
+  margin-left: 500px; 
+  width:500px; 
+  height:450px; 
+  padding-top: 50px;
+}

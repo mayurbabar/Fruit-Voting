@@ -1,0 +1,53 @@
+#modest,
+#modest .panel-body,
+.panel-modest,
+.panel-modest .panel-body {
+  display: inline-block;
+}
+
+.wrapper {
+  padding-top: 50px;
+}
+
+.push {
+  height: 50px;
+}
+
+.body {
+  height: 100%;
+  margin: 0;
+}
+
+.button-login {
+  padding-left: 65px;
+}
+
+.button-register {
+  padding-left: 10px;
+}
+
+.label-width {
+  width: 150px;
+}
+
+.input {
+  width: 350px;
+}
+
+.custom {
+  height: 250px;
+  width: 605px;
+  margin-left: 250px;
+}
+
+.label {
+  width: 200px;
+}
+
+.padding {
+  padding-top: 10px;
+}
+
+.center {
+  text-align: center;
+}

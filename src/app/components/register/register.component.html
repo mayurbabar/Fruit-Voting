@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <div class="panel panel-default custom">
+    <div class="panel-heading center"><font face="Belleza" size="5">Enter Your Details To Register</font></div>
+    <div class="panel-body">
+      <form class="form-horizontal" #f="ngForm" novalidate (ngSubmit)="f.form.valid && addUser()">
+        <div class="form-group">
+          <label for="name" class="col-sm-2 control-label label-width"><font face="Belleza" size="3.5" color="#566573">Name : </font></label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control input" required minlength="3"  
+            [(ngModel)]="model.name" #name="ngModel" name="name">
+            <small [hidden]="name.valid || (name.pristine && !f.submitted)" class="text-danger">
+              Name is required (minimum 3 characters).
+            </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-sm-2 control-label label-width"><font face="Belleza" size="3.5" color="#566573">Email Address : </font></label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control input" required  [(ngModel)]="model.email" 
+            #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email">
+            <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">
+              Email is required and format should be <i>john@gmail.com</i>.
+            </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-2 control-label label-width"><font face="Belleza" size="3.5" color="#566573">Password : </font></label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control input" required minlength="3" validateEqual="Password2" reverse="true" #Password1="ngModel" [(ngModel)]="model.password" name="password">
+            <!--<input type="password" class="form-control" name="password" [ngModel]="model.password" 
+            required validateEqual="Password2" reverse="true" #Password1="ngModel">-->
+            <small [hidden]="Password1.valid || (Password1.pristine && !f.submitted)" class="text-danger">
+                Password is required (minimum 3 characters)
+            </small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-2 control-label label-width"><font face="Belleza" size="3.5" color="#566573">Confirm Password : </font></label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control input" minlength="3" validateEqual="Password1" 
+            reverse="true" #Password2="ngModel" [(ngModel)]="confirmPassword" name="confirmPassword">
+            <small [hidden]="Password2.valid || (Password2.pristine && !f.submitted)" class="text-danger">
+                Password mismatch
+            </small>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-8 button-register">  
+            <button type="submit" class="btn btn-success " [disabled]="!f.valid">Register</button>
+          </div>
+        </div>
+        
+      </form>
+
+    </div>
+  </div>
+</div>
