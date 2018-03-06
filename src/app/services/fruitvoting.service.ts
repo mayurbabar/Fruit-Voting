@@ -9,7 +9,7 @@ export class FruitvotingService {
   constructor(private _http:Http) { }
 
   loginRequest(email, password){
-    return this._http.post("http://fruitvoting.epizy.com/fruitvoting/login.php/",{'email':email, 'password':password})
+    return this._http.post("http://localhost/restapi/login.php/",{'email':email, 'password':password})
       .map(res=>{
         this.checkMe = res;
 
@@ -24,12 +24,12 @@ export class FruitvotingService {
   }
 
   register(info){
-    return this._http.post("http://fruitvoting.epizy.com/fruitvoting/register.php",info)
+    return this._http.post("http://localhost/restapi/register.php",info)
       .map(()=>"");
   }
 
   getFruits(){
-    return this._http.get("http://fruitvoting.epizy.com/fruitvoting/getFruits.php/")
+    return this._http.get("http://localhost/restapi/getFruits.php/")
       .map(res=>{
         this.checkMe = res;
 
@@ -41,21 +41,21 @@ export class FruitvotingService {
   }
 
   addFruit(newFruit){
-    return this._http.post("http://fruitvoting.epizy.com/fruitvoting/addFruit.php",{'newFruit':JSON.stringify(newFruit)})
+    return this._http.post("http://localhost/restapi/addFruit.php",{'newFruit':JSON.stringify(newFruit)})
       .map(res=>{
         this.checkMe = res;
       });
   }
 
   vote(info){
-    return this._http.post("http://fruitvoting.epizy.com/fruitvoting/vote.php",JSON.stringify(info))
+    return this._http.post("http://localhost/restapi/vote.php",JSON.stringify(info))
       .map(res=>{
         this.checkMe = res;
       });
   }
 
   viewVotes(){
-    return this._http.get("http://fruitvoting.epizy.com/fruitvoting/viewvotes.php/")
+    return this._http.get("http://localhost/restapi/viewvotes.php/")
       .map(res=>{
         this.checkMe = res;
 
@@ -67,7 +67,7 @@ export class FruitvotingService {
   }
 
   userHistory(id){
-    return this._http.post("http://fruitvoting.epizy.com/fruitvoting/uservotes.php/", {'userID':id})
+    return this._http.post("http://localhost/restapi/uservotes.php/", {'userID':id})
       .map(res=>{
         this.checkMe = res;
 
